@@ -9,7 +9,7 @@ function CategoryPage() {
       <h2>Category name</h2>
       <div className="products-container">
         {mockdata.map((item) => {
-          return <ProductCard key={item.id} {...item} />;
+          return <ProductCard key={item.id} item={item} />;
         })}
       </div>
     </Wrapper>

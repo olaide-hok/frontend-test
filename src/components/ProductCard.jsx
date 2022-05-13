@@ -1,9 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useCartContext } from "../context/cart_context";
 
-function ProductCard({ pname, price, image }) {
+function ProductCard({item}) {
+
+  const { pname, price, image } = item
+  const {addToCart} = useCartContext()
   return (
-    <Wrapper>
+    <Wrapper
+      onClick={() => addToCart(item)}
+    >
       <img src={image} alt={pname}/>
       <p>{pname}</p>
       <span>{price}</span>

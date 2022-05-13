@@ -15,8 +15,7 @@ export const CartProvider = ({ children }) => {
 
     // Add Item to Cart
     const addToCart = (item) => {
-        dispatch({ type: ADD_ITEM_TO_CART, payload: {item} })
-        console.log(item);
+        dispatch({ type: ADD_ITEM_TO_CART, payload: item })
     }
 
     // Toggle Cart Dropdown

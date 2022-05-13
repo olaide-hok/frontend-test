@@ -1,7 +1,7 @@
 import React from "react";
 import { mockdata } from "../utils/data";
 import styled from "styled-components";
-import Product from "../components/Product";
+import ProductCard from "../components/ProductCard";
 
 function CategoryPage() {
   return (
@@ -9,7 +9,7 @@ function CategoryPage() {
       <h2>Category name</h2>
       <div className="products-container">
         {mockdata.map((item) => {
-          return <Product key={item.id} {...item} />;
+          return <ProductCard key={item.id} {...item} />;
         })}
       </div>
     </Wrapper>
@@ -18,7 +18,9 @@ function CategoryPage() {
 
 const Wrapper = styled.section`
   width: 90vw;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
   h2 {
     font-weight: 400;
     font-size: 42px;

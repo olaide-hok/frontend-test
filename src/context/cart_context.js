@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useReducer } from 'react'
-import { ADD_ITEM_TO_CART, TOGGLE_CART_DROPDOWN_ICON } from '../actions'
+import { 
+    ADD_ITEM_TO_CART, 
+    TOGGLE_CART_DROPDOWN_ICON 
+} from '../actions'
 
 import cart_reducer from '../reducers/cart_reducer'
 

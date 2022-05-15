@@ -79,6 +79,7 @@ const NavContainer = styled.nav`
       &:hover {
         border-bottom: 2px solid var(--c-primary);
         color: var(--c-primary);
+        padding-bottom: 25px;
       }
     }
   }

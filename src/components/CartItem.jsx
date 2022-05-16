@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-function CartItem({ item: { image, pname, price, quantity } }) {
+function CartItem({ item: { gallery, name, prices, quantity } }) {
   return (
     <Wrapper>
       <div className="item-details">
-        <p>{pname}</p>
-        <span>{price}</span>
+        <p>{name}</p>
+        <span>{prices[0]["currency"]["symbol"]}{prices[0]["amount"]}</span>
         <p>Size:</p>
         <p>Color:</p>
       </div>
@@ -18,7 +18,7 @@ function CartItem({ item: { image, pname, price, quantity } }) {
       </div>
 
       <div className="item_image">
-        <img src={image} alt={pname}></img>
+        <img src={gallery[0]} alt={name}></img>
       </div>
     </Wrapper>
   );

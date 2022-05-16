@@ -1,14 +1,30 @@
 import React from "react";
-import { mockdata } from "../utils/data";
+// import { mockdata } from "../utils/data";
+
 import styled from "styled-components";
 import ProductCard from "../components/ProductCard";
+import { useCategoriesContext } from "../context/categories_context";
 
 function CategoryPage() {
+  const {
+    categories_loading: loading,
+    categories_error: error,
+    categories,
+  } = useCategoriesContext();
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
   return (
     <Wrapper>
       <h2>Category name</h2>
-      <div className="products-container">
+      {/* <div className="products-container">
         {mockdata.map((item) => {
+          return <ProductCard key={item.id} item={item} />;
+        })}
+      </div> */}
+
+      <div className="products-container">
+        {categories.map((item) => {
           return <ProductCard key={item.id} item={item} />;
         })}
       </div>

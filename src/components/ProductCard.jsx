@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useCartContext } from "../context/cart_context";
+// import { useCartContext } from "../context/cart_context";
 
 function ProductCard({item}) {
 
-  const { pname, price, image } = item
-  const {addToCart} = useCartContext()
+  // const { pname, price, image } = item
+
+  const { name, prices, gallery } = item
+  // const {addToCart} = useCartContext()
   return (
     <Wrapper
-      onClick={() => addToCart(item)}
+      onClick={() => {
+        // addToCart(item)
+      }}
     >
-      <img src={image} alt={pname}/>
-      <p>{pname}</p>
-      <span>{price}</span>
+      <Link to={`/${item.id}`}>
+      <img src={gallery[0]} alt={name}/>
+      </Link>
+      <p>{name}</p>
+      <span>{prices[0]["currency"]["symbol"]}{prices[0]["amount"]}</span>
     </Wrapper>
   );
 }

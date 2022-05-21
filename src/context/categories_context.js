@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useQuery } from "@apollo/client"
 import { createContext, useContext, useReducer } from "react"
 import { GET_CATEGORIES_BEGIN, GET_CATEGORIES_ERROR, GET_CATEGORIES_SUCCESS } from "../actions"
-import { GET_CATEGORIES, GET_PRODUCT } from "../GraphQL/Queries"
+import { GET_CATEGORIES } from "../GraphQL/Queries"
 
 import categories_reducer from "../reducers/categories_reducer"
 
@@ -18,7 +18,6 @@ const CategoriesContext = createContext()
 export const CategoriesProvider = ({ children }) => {
     const [state, dispatch] = useReducer(categories_reducer, initialState)
     const {loading, error, data} = useQuery(GET_CATEGORIES)
-    // const {loading, error, data} = useQuery(GET_PRODUCT)
 
     const fetchCategories = () => {
         if (loading) {

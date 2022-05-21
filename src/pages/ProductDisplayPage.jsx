@@ -1,5 +1,5 @@
-import { useQuery } from '@apollo/client';
-import React, { useEffect } from 'react'
+import { useQuery} from '@apollo/client';
+import React from 'react'
 import { useParams } from 'react-router-dom'
 // import { useCategoriesContext } from '../context/categories_context';
 import { GET_PRODUCT } from '../GraphQL/Queries';
@@ -7,23 +7,13 @@ import { GET_PRODUCT } from '../GraphQL/Queries';
 
 
 function ProductDisplayPage() {
+
   const {id} = useParams()
-  console.log(id);
-  const productId = id
+  const {loading, error, data} = useQuery(GET_PRODUCT, {variables: {
+    id: id
+  }})
 
-
- 
-  const {loading, error, data} = useQuery(GET_PRODUCT, {
-    variables: "jacket-canada-goosee"
-  })
-  console.log(data);
-
-  // const { fetchSingleProduct } = useCategoriesContext()
-
-  useEffect(() => {
-    // fetchSingleProduct(id)
-    // eslint-disable-next-line
-  }, [id])
+  console.log(data.product);
 
   return (
     <div>ProductDisplayPage</div>

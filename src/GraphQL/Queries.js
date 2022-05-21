@@ -34,9 +34,11 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
+// ($productId: String)
+
 export const GET_PRODUCT = gql`
-query($productId: String) {
-	product(id: $productId) {
+query Product($id: String!) {
+	product(id: $id) {
     name
     inStock
     gallery

@@ -10,6 +10,7 @@ import "./index.css";
 import App from "./App";
 import { CartProvider } from "./context/cart_context";
 import { CategoriesProvider } from "./context/categories_context";
+import { ProductProvider } from "./context/product_context";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -61,9 +62,11 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <CategoriesProvider>
+        <ProductProvider>
         <CartProvider>
           <App />
         </CartProvider>
+        </ProductProvider>
       </CategoriesProvider>
     </ApolloProvider>
   </React.StrictMode>

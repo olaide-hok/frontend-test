@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import styled from "styled-components";
+
 // import { useCartContext } from "../context/cart_context";
 
 function ProductCard({item}) {
@@ -8,11 +9,13 @@ function ProductCard({item}) {
   // const { pname, price, image } = item
 
   const { name, prices, gallery } = item
+  
   // const {addToCart} = useCartContext()
   return (
     <Wrapper
       onClick={() => {
         // addToCart(item)
+        
       }}
     >
       <Link to={`/${item.id}`}>
